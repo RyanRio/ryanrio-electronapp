@@ -1,0 +1,65 @@
+{
+    "name": "@ryanrio/electronapp",
+    "productName": "electronapp",
+    "version": "1.0.0",
+    "description": "My Electron application description",
+    "main": "build/index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "lint": "echo \"No linting configured\""
+    },
+    "keywords": [],
+    "author": "Ryan",
+    "license": "MIT",
+    "config": {
+        "forge": {
+            "make_targets": {
+                "win32": [
+                    "squirrel"
+                ],
+                "darwin": [
+                    "zip"
+                ],
+                "linux": [
+                    "deb",
+                    "rpm"
+                ]
+            },
+            "electronPackagerConfig": {},
+            "electronWinstallerConfig": {
+                "name": "electronapp"
+            },
+            "electronInstallerDebian": {},
+            "electronInstallerRedhat": {},
+            "github_repository": {
+                "owner": "",
+                "name": ""
+            },
+            "windowsStoreConfig": {
+                "packageName": "",
+                "name": "electronapp"
+            }
+        }
+    },
+    "dependencies": {
+        "electron": "^1.6.11",
+        "electron-compile": "^6.4.1",
+        "electron-devtools-installer": "^2.0.1",
+        "react": "^15.4.1",
+        "react-dom": "^15.4.1",
+        "react-hot-loader": "^3.0.0-beta.6"
+    },
+    "devDependencies": {
+        "@types/electron-devtools-installer": "^2.0.2",
+        "@types/node": "^8.0.9",
+        "@types/react": "^15.0.35",
+        "electron-prebuilt-compile": "1.6.11",
+        "tslib": "^1.7.1",
+        "tslint": "^5.5.0",
+        "tslint-config-standard": "^6.0.1",
+        "typescript": "^2.4.1"
+    }
+}
