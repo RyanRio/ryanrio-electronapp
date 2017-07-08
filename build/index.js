@@ -4,14 +4,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var electron_1 = require("electron");
 var electron_devtools_installer_1 = require("electron-devtools-installer");
-var electron_compile_1 = require("electron-compile");
+// import { enableLiveReload } from 'electron-compile';
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 var mainWindow;
 var isDevMode = process.execPath.match(/[\\/]electron/);
 console.log(process.type);
-if (isDevMode)
-    electron_compile_1.enableLiveReload({ strategy: 'react-hmr' });
+// if (isDevMode) enableLiveReload({strategy: 'react-hmr'});
 var createWindow = function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
     return tslib_1.__generator(this, function (_a) {
         switch (_a.label) {
@@ -23,6 +22,7 @@ var createWindow = function () { return tslib_1.__awaiter(_this, void 0, void 0,
                 });
                 // and load the index.html of the app.
                 mainWindow.loadURL("file://" + __dirname + "/index.html");
+                console.log("loaded html");
                 if (!isDevMode) return [3 /*break*/, 2];
                 return [4 /*yield*/, electron_devtools_installer_1.default(electron_devtools_installer_1.REACT_DEVELOPER_TOOLS)];
             case 1:
@@ -62,4 +62,3 @@ electron_1.app.on('activate', function () {
 });
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
-//# sourceMappingURL=index.js.map
